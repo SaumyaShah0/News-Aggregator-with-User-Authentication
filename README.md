@@ -16,7 +16,7 @@ This is a simple **News Aggregator Web App** that fetches real-time news using t
 ## Installation & Setup
 1. Clone this repository:
    ```sh
-   git clone https://github.com/your-repo/news-aggregator.git
+   [git clone https://github.com/your-repo/news-aggregator.git](https://github.com/SaumyaShah0/News-Aggregator-with-User-Authentication.git)
    ```
 2. Navigate to the project folder:
    ```sh
