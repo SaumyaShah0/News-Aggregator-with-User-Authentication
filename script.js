@@ -17,7 +17,7 @@ function toggleDarkMode() {
 }
 
 // News API Configuration
-const API_KEY = "b39f722083d64208a047a5d2af06724e";
+const API_KEY = "YOUR_API_KEY"; // Enter Your Api Key
 const url = "https://newsapi.org/v2/everything?q=";
 let currentCategory = 'general';
 
