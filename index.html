@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="main-nav container flex">
+            <a href="#" onclick="reload()" class="company-logo">
+                <h1>NEWS</h1>
+            </a>
+            <div class="nav-links">
+                <ul class="flex">
+                    <li class="hover-link nav-item" id="ipl" onclick="onNavItemClick('cricket')">Cricket</li>
+                    <li class="hover-link nav-item" id="finance" onclick="onNavItemClick('finance')">Finance</li>
+                    <li class="hover-link nav-item" id="politics" onclick="onNavItemClick('politics')">Politics</li>
+                    <li class="hover-link nav-item" id="tech" onclick="onNavItemClick('tech')">Tech</li>
+                    <li class="hover-link nav-item" onclick="showBookmarks()">Bookmarks</li>
+                </ul>
+            </div>
+            <div class="nav-controls flex">
+                <div class="search-bar flex">
+                    <input id="search-text" type="text" class="news-input" placeholder="e.g. Science">
+                    <button id="search-button" class="search-button">Search</button>
+                    <div class="nav-actions flex">
+                        <button id="dark-mode-toggle" class="dark-mode-toggle">🌓</button>
+                        <a href="#" id="logoutButton" class="logout-button">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div id="loading" class="loading-indicator">
+            <div class="spinner"></div>
+            Loading news...
+        </div>
+        <div class="cards-container container flex" id="cards-container"></div>
+    </main>
+
+    <!-- Bookmarks Panel -->
+    <div id="bookmarks-container" class="bookmarks-container hidden">
+        <div class="bookmarks-header">
+            <h2>Saved Articles</h2>
+            <button class="close-btn" onclick="hideBookmarks()">✕</button>
+        </div>
+        <div class="bookmarks-list" id="bookmarks-list"></div>
+    </div>
+
+    <template id="template-news-card">
+        <div class="card">
+            <div class="card-header">
+                <img src="https://via.placeholder.com/400x200" alt="news-image" id="news-img">
+                <button class="bookmark-btn"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25"
+                        height="25" viewBox="0 0 24 24" style="fill:#228BE6;">
+                        <path
+                            d="M 6 2 C 4.8444444 2 4 2.9666667 4 4 L 4 22.039062 L 12 19.066406 L 20 22.039062 L 20 20.599609 L 20 4 C 20 3.4777778 19.808671 2.9453899 19.431641 2.5683594 C 19.05461 2.1913289 18.522222 2 18 2 L 6 2 z">
+                        </path>
+                    </svg></button>
+            </div>
+            <div class="card-content">
+                <h3 id="news-title">This is the Title</h3>
+                <div class="meta-info">
+                    <span class="news-source" id="news-source">End Gadget</span>
+                    <span class="news-date">26/08/2023</span>
+                </div>
+                <p class="news-desc" id="news-desc">Lorem ipsum dolor sit amet consectetur.</p>
+
+                <div class="engagement-bar">
+                    <div class="vote-badges">
+                        <span class="upvote-badge">▲ 0</span>
+                        <span class="downvote-badge">▼ 0</span>
+                    </div>
+                    <button class="share-btn">Share</button>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="upvote-btn" aria-label="Upvote">
+                        <span aria-hidden="true">▲</span> Upvote
+                    </button>
+                    <button class="downvote-btn" aria-label="Downvote">
+                        <span aria-hidden="true">▼</span> Downvote
+                    </button>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

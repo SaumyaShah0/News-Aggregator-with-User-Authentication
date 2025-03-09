@@ -1,0 +1,328 @@
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:wght@500&display=swap");
+
+:root {
+    --primary-bg: #ffffff;
+    --primary-text: #183b56;
+    --secondary-bg: #f3faff;
+    --accent-color: #2294ed;
+    --accent-dark: #1d69a3;
+    --logout-color: #dc3545;
+    --card-shadow: 0 0 4px #d4ecff;
+    --badge-bg: rgba(255, 255, 255, 0.9);
+}
+
+.dark-mode {
+    --primary-bg: #1a1a1a;
+    --primary-text: #ffffff;
+    --secondary-bg: #2d2d2d;
+    --accent-color: #3399ff;
+    --accent-dark: #2678cc;
+    --card-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    --badge-bg: rgba(45, 45, 45, 0.9);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+    line-height: 1.6;
+}
+
+/* Navigation Bar */
+.main-nav {
+    background-color: var(--secondary-bg);
+    box-shadow: 0 0 4px #bbd0e2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Company Logo */
+.company-logo h1 {
+    color: var(--primary-text);
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin: 0;
+}
+
+/* Navbar Links */
+.nav-links ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links ul li {
+    position: relative;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover Effect on Navbar Categories */
+.nav-links ul li:hover {
+    background-color: var(--accent-color);
+    color: white;
+    border-radius: 4px;
+}
+
+/* Active Navbar Item */
+.nav-item.active {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+/* Search Bar + Logout Button Alignment */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.news-input {
+    width: 250px;
+    padding: 0.5rem;
+    border: 2px solid #bbd0e2;
+    border-radius: 4px;
+}
+
+.search-button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+.search-button:hover {
+    background-color: var(--accent-dark);
+}
+
+/* Logout Button */
+.logout-button {
+    color: var(--logout-color);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    border: 2px solid var(--logout-color);
+    transition: all 0.2s ease;
+    text-decoration: none;
+    font-weight: 500;
+    background-color: transparent;
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+.logout-button:hover {
+    background-color: var(--logout-color);
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logout-button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* News Cards */
+.cards-container {
+    margin-top: 5rem;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background-color: var(--secondary-bg);
+    min-height: 400px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Bookmark Button */
+.bookmark-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    padding: 0.5rem;
+    transition: transform 0.2s ease;
+}
+
+.bookmark-btn:hover {
+    transform: scale(1.15);
+}
+
+.bookmark-btn.active svg {
+    fill: #ffd700 !important; /* Golden color when active */
+}
+
+/* Card Header */
+.card-header {
+    position: relative;
+    height: 200px;
+}
+
+.card-header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.category-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background-color: var(--badge-bg);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    backdrop-filter: blur(4px);
+}
+
+/* Engagement Bar */
+.engagement-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.vote-badges {
+    display: flex;
+    gap: 1rem;
+}
+
+.upvote-badge {
+    color: #2e7d32;
+    font-weight: 600;
+}
+
+.downvote-badge {
+    color: #d32f2f;
+    font-weight: 600;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.upvote-btn,
+.downvote-btn,
+/* Share Button */
+.share-btn {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    margin-right: 5px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Hover Effect */
+.share-btn:hover {
+    background-color: var(--accent-dark); /* Slightly darker blue */
+    transform: scale(1.05);
+}
+
+.upvote-btn {
+    background-color: #e0e0e0;
+    color: #555;
+}
+
+.downvote-btn {
+    background-color: #e0e0e0;
+    color: #555;
+}
+
+.share-btn {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.upvote-btn:hover,
+.downvote-btn:hover {
+    transform: scale(1.05);
+}
+
+.upvote-btn:active,
+.downvote-btn:active {
+    transform: scale(0.95);
+}
+
+.upvoted {
+    background-color: #4caf50 !important;
+    color: white !important;
+}
+
+.downvoted {
+    background-color: #f44336 !important;
+    color: white !important;
+}
+
+/* Dark Mode Toggle */
+.dark-mode-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    color: var(--primary-text);
+    transition: transform 0.2s ease;
+}
+
+.dark-mode-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* Accessibility */
+button:focus,
+input:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
