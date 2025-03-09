@@ -5,6 +5,8 @@ This is a simple **News Aggregator Web App** that fetches real-time news using t
 
 **This project is not complete, but it's working.**
 
+**🚀 Fun Fact:** Most of this code was written by AI, but the creator added a little magic of their own! 😃
+
 ## Features
 - **User Authentication:** Signup and login functionality using LocalStorage.
 - **News Fetching:** Retrieves live news articles via the **News API**.
